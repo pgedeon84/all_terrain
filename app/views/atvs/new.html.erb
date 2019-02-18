@@ -1,0 +1,10 @@
+<h3>New ATV</h3>
+
+<%= simple_form_for(@atv) do |f| %>
+<%= f.input :make %>
+<%= f.input :model %>
+<%= f.input :year %>
+<%= f.submit%>
+<% end %>
+
+<p><%= link_to "Back to ATVs", atvs_path %></p>
