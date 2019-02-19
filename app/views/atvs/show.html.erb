@@ -1,1 +1,6 @@
-<h1>this is my ATV "show" page</h1>
+<h1>ATVs</h1>
+  <h3><%= @atv.make %> </h3>
+   <%= cl_image_tag @atv.photo, height: 100, width: 200, crop: :thumb %>
+
+
+<p><%= link_to "Back to ATVs", atvs_path %></p>
