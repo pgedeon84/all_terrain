@@ -9,7 +9,7 @@
 Atv.destroy_all
 User.destroy_all
 
-url = "https://cdnmedia.endeavorsuite.com/images/organizations/e3f90816-1af7-4a00-8216-159ccdd86b87/Honda%20ATVs/TriangleCycles_hondaATVSHR.jpg?v=1521831853298"
+url = "http://media.nj.com/essex_impact/photo/2015/05/29/ga1025atv-6-kurdzuk-9ccf6173101256d7.jpg"
 puts "creating users"
 20.times do
   User.create!(
