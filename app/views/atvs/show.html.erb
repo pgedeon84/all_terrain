@@ -1,24 +1,53 @@
 
-<div>
- <%= @atv.make %>
- <%= @atv.model %>
+<div class="container"
 
- <%=@atv.year  %>
+  <div class="my-container">
+    <h2>My ATV</h2>
+      <div class="top-banner">
+
+        <div class="spec-container">
+          <h2> <strong>Make:</strong> <%= @atv.make %><h2>
+          <h2><strong>Model:</strong> <%= @atv.model %><h2>
+          <h2><strong>Year:</strong> <%=@atv.year%><h2>
+        </div>
+
+        <div class="atv-img">
+          <%= cl_image_tag @atv.photo,height: 400, width: 600, crop: :fill %>
+        </div>
+
+      </div>
+
+    <h2>About My ATV</h2>
+      <div class="btm-banner">
+
+        <div class="atv-description">
+          <p><%= @atv.description %></p>
+        </div>
+
+        <div class="img-avatar">
+          <%= cl_image_tag @atv.user.photo,
+           class: "img-circle" %>
+           <p><%= @atv.user.email %></p>
+        </div>
+
+      </div>
+
+    <footer class="my-fixed-bottom">
+      <%= link_to "BOOK", atv_bookings_path(@atv) %>
+      <%= link_to "Back to Atvs", atvs_path %>
+    </footer>
+
+
+  </div>
+
 </div>
 
-<div>
-  <%= cl_image_tag @atv.photo,height: 300, width: 400, crop: :fill %>
-</div>
 
-<div>
-  <%= @atv.description %>
-</div>
 
-<div>
-  <%= @atv.price %> <%= link_to "BOOK", atv_bookings_path(@atv) %>
-</div>
 
-<%= link_to "Back to Atvs", atvs_path %>
+
+
+
 
 
 
