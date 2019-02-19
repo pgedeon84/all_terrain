@@ -6,6 +6,10 @@ class AtvsController < ApplicationController
 
   def show
     @atv = Atv.find(params[:id])
+
+    @booking = Booking.new
+    @booking.atv_id = @atv.id
+
   end
 
   def new
