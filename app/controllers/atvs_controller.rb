@@ -24,6 +24,6 @@ class AtvsController < ApplicationController
   private
 
   def atv_params
-    params.require(:atvs).permit(:make, :model, :year, :mileage, :price)
+    params.require(:atv).permit(:make, :model, :year, :price, :photo)
   end
 end
