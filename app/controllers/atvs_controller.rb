@@ -15,6 +15,7 @@ class AtvsController < ApplicationController
   def create
     @atv = Atv.new(atv_params)
     if @atv.save
+    @atv.user = current_user
       redirect_to atv_path(@atv)
     else
       render :new
