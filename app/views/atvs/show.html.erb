@@ -1,1 +1,22 @@
-<h1>this is my ATV "show" page</h1>
+<div>
+ <%= @atv.make %>
+ <%= @atv.model %>
+
+ <%=@atv.year  %>
+</div>
+
+<div>
+  <%= cl_image_tag @atv.photo,height: 300, width: 400, crop: :fill %>
+</div>
+
+<div>
+  <%= @atv.description %>
+</div>
+
+<div>
+  <%= @atv.price %> <%= link_to "BOOK", atv_bookings_path(@atv) %>
+</div>
+
+
+
+
