@@ -1,4 +1,17 @@
-<% @atvs.each do |atv| %>
-<%= atv.make %>
-<% end %>
+<div class="containter">
+  <h1>ATV Listing</h1>
 
+  <%= link_to "New", new_atv_path %>
+
+    <div class="flex-container">
+      <% @atvs.each do |atv| %>
+        <%= link_to atv_path(atv.id) do %>
+          <div class="atv-card"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url('<%= cl_image_path atv.photo, height: 300, width: 400, crop: :fill %>')">
+            <h2><%= atv.make %></h2>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>

@@ -1,17 +1,26 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = BOOKING.all
+    @bookings = Booking.all
+  end
+
+  def new
+    @atv = Atv.find(params[:atv_id])
+
+    @booking = Booking.new
+    @booking.atv = @atv
   end
 
   def create
     @atv = Atv.find(params[:atv_id])
     @booking = Booking.new(booking_params)
     @booking.atv = @atv
-    if booking.save
-      redirect_to atv_path(@atv)
+    @booking.user = current_user
+    if @booking.save
+
+      redirect_to bookings_path
     else
-      render :new
+      render "atvs/show"
     end
   end
 
@@ -30,6 +39,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit.(:from, :to, :atv_id)
+    params.require(:booking).permit(:from, :to, :atv_id, :user_id)
   end
 end

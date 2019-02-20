@@ -6,6 +6,10 @@ class AtvsController < ApplicationController
 
   def show
     @atv = Atv.find(params[:id])
+
+    @booking = Booking.new
+    @booking.atv_id = @atv.id
+
   end
 
   def new
@@ -14,7 +18,9 @@ class AtvsController < ApplicationController
 
   def create
     @atv = Atv.new(atv_params)
+    @atv.user = current_user
     if @atv.save
+    @atv.user = current_user
       redirect_to atv_path(@atv)
     else
       render :new
@@ -24,6 +30,6 @@ class AtvsController < ApplicationController
   private
 
   def atv_params
-    params.require(:atvs).permit(:make, :model, :year, :mileage, :price)
+    params.require(:atv).permit(:make, :model, :year, :price, :city, :description, :photo)
   end
 end

@@ -1,1 +1,8 @@
-<h1>this is the "New Booking form" page</h1>
+
+<h1>hello</h1>
+
+ <%= simple_form_for ([@atv, @booking]) do |f| %>
+        <%= f.input :from , as: :date, html5: true %>
+        <%= f.input :to, as: :date, html5: true%>
+        <%= f.submit %>
+        <% end %>
