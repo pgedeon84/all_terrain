@@ -11,8 +11,18 @@
 }
 
 /* Logo */
-.navbar-all_terrrain img {
+.navbar-all_terrrain {
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
   height: 70px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: flex-start;
 }
 
 /* User Avatar */
@@ -22,11 +32,13 @@
   border-radius: 50%;
 }
 
+
 /* Right section */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 50%;
 }
 
 /* Basic navbar item */
@@ -75,3 +87,8 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.search-city {
+
+}
+
