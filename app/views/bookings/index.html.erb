@@ -1,14 +1,49 @@
-<h1>this is the "bookings index" page</h1>
+<h1>Booking Logs</h1> <p><%= link_to "Back to Atvs", atvs_path %>
 
-<h2>you asking</h2>
+<div class="flex-container">
+
+<div>
+<h2>My Sent Requests</h2>
 <ul>
   <% current_user.bookings.each do |book|  %>
-
-    <li><%= book.from %>--- <%= book.to %></li>
-    <li> <%= book.atv.year %> <%= book.atv.make %> <%= book.atv.model %> </li>
-    <li> <%= book.atv.confirmed %> </li>
+  <li><%= book.from %>--- <%= book.to %></li>
+  <li> <%= book.atv.year %> <%= book.atv.make %> <%= book.atv.model %> </li>
+  <%= link_to "Update", atvs_path %>
     <p>------------------------------------------------</p>
   <% end %>
 </ul>
+</div>
+
+<div>
+<h2>Requestors </h2>
+
+<ul>
+  <% current_user.atvs.each do |atv| %>
+  <p> <%= atv.year %> <%= atv.make %> <%= atv.model %> </p>
+  <ul>
+  <%  atv.bookings.each do |book| %>
+<li> <%= book.from %>---<%= book.to %> </li>
+  <li> <%= book.user.email %> is requesting your atv </li>
+  <p>-----------------------------------------------------------</p>
+  <% end %>
+  </ul>
+
+
+  <% end %>
+</ul>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
