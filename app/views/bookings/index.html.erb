@@ -1,1 +1,12 @@
 <h1>this is the "bookings index" page</h1>
+
+<h2>you asking</h2>
+<ul>
+  <% current_user.bookings.each do |book|  %>
+  <% binding.pry %>
+    <li><%= book.from %>--- <%= book.to %></li>
+    <li><%= book.atv.make %> <%=  %> </li>
+  <% end %>
+</ul>
+<h2>you receiving</h2>
+
