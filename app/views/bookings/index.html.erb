@@ -6,9 +6,11 @@
 <h2>My Sent Requests</h2>
 <ul>
   <% current_user.bookings.each do |book|  %>
+
   <li><%= book.from %>--- <%= book.to %></li>
   <li> <%= book.atv.year %> <%= book.atv.make %> <%= book.atv.model %> </li>
   <%= link_to "Update", atvs_path %>
+
     <p>------------------------------------------------</p>
   <% end %>
 </ul>
