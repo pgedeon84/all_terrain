@@ -1,5 +1,5 @@
 
-<div class="container"
+  <div class="container"
 
   <div class="my-container">
     <h2>My ATV</h2>
@@ -28,32 +28,8 @@
           <%= cl_image_tag @atv.user.photo,
            class: "img-circle" %>
            <p><%= @atv.user.email %></p>
-        </div>
-
-      </div>
-
-    <footer class="my-fixed-bottom">
-      <%= link_to "BOOK", atv_bookings_path(@atv) %>
-      <%= link_to "Back to Atvs", atvs_path %>
-    </footer>
-
-
-  </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  BOOK
 </button>
 
 <!-- Modal -->
@@ -81,6 +57,24 @@
     </div>
   </div>
 </div>
+        </div>
+
+      </div>
+
+    <footer class="my-fixed-bottom">
+
+
+      <%= link_to "Back to Atvs", atvs_path %>
+    </footer>
+
+
+  </div>
+
+</div>
+
+
+
+
 
 
 

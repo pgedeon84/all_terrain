@@ -5,10 +5,10 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @atv = Atv.find(params[:atv_id])
+    # @atv = Atv.find(params[:atv_id])
 
-    @booking = Booking.new
-    @booking.atv = @atv
+    # @booking = Booking.new
+    # @booking.atv = @atv
   end
 
   def create

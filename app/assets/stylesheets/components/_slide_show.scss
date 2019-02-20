@@ -5,6 +5,7 @@
   max-width: 1000px;
   position: relative;
   margin: auto;
+  padding-top: 10px;
 }
 
 /* Hide the images by default */
@@ -43,7 +44,7 @@
 }
 
 /* Caption text */
-.text {
+.slide-text {
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
