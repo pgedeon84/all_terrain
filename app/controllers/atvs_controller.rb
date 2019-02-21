@@ -1,7 +1,11 @@
 class AtvsController < ApplicationController
-skip_before_action :authenticate_user!, only: [:show, :index]
+  skip_before_action :authenticate_user!, only: [:show, :index]
   def index
-    @atvs = Atv.all
+    if params[:city].blank?
+      @atvs = Atv.all
+    else
+      @atvs = Atv.where("city ILIKE ?", "%#{params[:city]}%")
+    end
   end
 
   def show
@@ -9,7 +13,6 @@ skip_before_action :authenticate_user!, only: [:show, :index]
 
     @booking = Booking.new
     @booking.atv_id = @atv.id
-
   end
 
   def new
@@ -20,7 +23,7 @@ skip_before_action :authenticate_user!, only: [:show, :index]
     @atv = Atv.new(atv_params)
     @atv.user = current_user
     if @atv.save
-    @atv.user = current_user
+      @atv.user = current_user
       redirect_to atv_path(@atv)
     else
       render :new

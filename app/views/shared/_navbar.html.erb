@@ -4,10 +4,10 @@
     <%= image_tag "ATV-Logo.png"%>
   </a>
   <div class="search-box">
-    <form id="search-city" class="form-inline">
-      <input type="text" class="form-control" placeholder="Enter City Name">
-      <!-- <input type="submit" class="btn btn-primary" value="Search"> -->
-      <%= link_to "Search", atvs_path, class: "btn btn-primary" %>
+    <form id="search-city" class="form-inline" action="/atvs">
+      <input name="city" type="text" class="form-control" placeholder="Enter City Name">
+      <input type="submit" class="btn btn-primary" value="Search">
+      <%# link_to "Search", atvs_path, class: "btn btn-primary" %>
     </form>
   </div>
   <!-- Right Navigation -->
