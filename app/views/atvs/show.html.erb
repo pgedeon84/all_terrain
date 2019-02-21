@@ -1,69 +1,65 @@
 
   <div class="container">
 
-  <div class="my-container">
-    <h1 class="title">My ATV</h1>
-      <div class="top-banner">
+    <div class="my-container">
 
-        <div class="spec-container">
-          <h2> <strong>Make:</strong> <%= @atv.make %><h2>
-          <h2><strong>Model:</strong> <%= @atv.model %><h2>
-          <h2><strong>Year:</strong> <%=@atv.year%><h2>
+      <h1 class="title">My ATV</h1>
+
+        <div class="top-banner">
+
+          <div class="spec-container" style="background-image:
+        url('<%= image_path "dirt.jpeg" %>')">
+            <h2> <strong>Make:</strong> <%= @atv.make %><h2>
+            <h2><strong>Model:</strong> <%= @atv.model %><h2>
+            <h2><strong>Year:</strong> <%=@atv.year%><h2>
+          </div>
+
+          <div class="atv-img">
+            <%= cl_image_tag @atv.photo,height: 400, width: 500, crop: :fill %>
+          </div>
         </div>
 
-        <div class="atv-img">
-          <%= cl_image_tag @atv.photo,height: 400, width: 600, crop: :fill %>
-        </div>
 
-      </div>
+      <h2 class="title">About My ATV</h2>
+        <div class="btm-banner">
 
-    <h2>About My ATV</h2>
-      <div class="btm-banner">
+          <div class="atv-description">
+            <h4><%= @atv.description %></h4>
+          </div>
 
-        <div class="atv-description">
-          <p><%= @atv.description %></p>
-        </div>
-
-        <div class="img-avatar">
-          <%= cl_image_tag @atv.user.photo,
-           class: "img-circle" %>
-           <p><%= @atv.user.email %></p>
-           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  BOOK
-</button>
-
+          <div class="img-avatar">
+            <%= cl_image_tag @atv.user.photo,
+             class: "img-circle" %>
+             <h6><strong><%= @atv.user.email %></strong></h6>
+            <h6>$ <%= @atv.price %></h6>
+             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">BOOK
+             </button>
+          </div>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for ([@atv, @booking]) do |f| %>
-        <%= f.input :from , as: :date, html5: true %>
-        <%= f.input :to, as: :date, html5: true%>
-        <%= f.submit %>
-        <% end %>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button  type="button" class="btn btn-primary">Save changes</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for ([@atv, @booking]) do |f| %>
+            <%= f.input :from , as: :date, html5: true %>
+            <%= f.input :to, as: :date, html5: true%>
+            <%= f.submit %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-        </div>
 
       </div>
 
     <footer class="my-fixed-bottom">
-
-
       <%= link_to "Back to Atvs", atvs_path %>
     </footer>
 
