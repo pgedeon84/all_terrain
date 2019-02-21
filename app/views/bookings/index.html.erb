@@ -2,40 +2,44 @@
 
 <div class="flex-container">
 
-<div>
-<h2>My Sent Requests</h2>
-<ul>
-  <% current_user.bookings.each do |book|  %>
+  <div>
+    <h2>My Sent Requests</h2>
+    <ul>
+      <% current_user.bookings.each do |book|  %>
 
-  <li><%= book.from %>--- <%= book.to %></li>
-  <li> <%= book.atv.year %> <%= book.atv.make %> <%= book.atv.model %> </li>
-  <%= link_to "Update", atvs_path %>
+        <li><%= book.from %>--- <%= book.to %></li>
+        <li> <%= book.atv.year %> <%= book.atv.make %> <%= book.atv.model %> </li>
+        <%= link_to "Update", atvs_path %>
 
-    <p>------------------------------------------------</p>
-  <% end %>
-</ul>
+        <p>------------------------------------------------</p>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+   <h2>Requestors </h2>
+
+    <ul>
+      <% current_user.atvs.each do |atv| %>
+         <% unless atv.bookings.count == 0   %>
+          <p> <%= atv.year %> <%= atv.make %> <%= atv.model %> </p>
+          <ul class="test-border">
+            <%  atv.bookings.each do |book| %>
+              <li> <%= cl_image_tag book.user.photo,height: 50, width: 50, crop: :thumb, class: "img-circle" %>  <%= book.user.email %> is requesting your atv </li>
+              <li> From: <%= book.from %> ---> To: <%= book.to %> </li>
+              <li> hi </li>
+              <p>-----------------------------------------------------------</p>
+            <% end %>
+          </ul>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
 </div>
 
-<div>
-<h2>Requestors </h2>
-
-<ul>
-  <% current_user.atvs.each do |atv| %>
-  <p> <%= atv.year %> <%= atv.make %> <%= atv.model %> </p>
-  <ul>
-  <%  atv.bookings.each do |book| %>
-<li> <%= book.from %>---<%= book.to %> </li>
-  <li> <%= book.user.email %> is requesting your atv </li>
-  <p>-----------------------------------------------------------</p>
-  <% end %>
-  </ul>
 
 
-  <% end %>
-</ul>
-</div>
-
-</div>
 
 
 
