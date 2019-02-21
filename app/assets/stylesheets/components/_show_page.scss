@@ -1,10 +1,47 @@
+
+.container {
+  width:100% ;
+}
+
+.top-banner {
+  box-shadow:10px 10px 10px lightgray;
+}
+
 .title {
   text-align: center;
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Acme', sans-serif;
+}
+.spec-container {
+  background: url(dirt.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  opacity: 0.8;
+  border: 1px solid black;
+
 }
 
-.my-container {
-  background-color: darkgray;
+.spec-container h2 {
+  color: #fcfdff;
+  text-align: center;
+  padding-top: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Acme', sans-serif;
 }
 
+.atv-img{
+   border: 1px solid black;
+}
+
+.btm-banner {
+  background-color: #dee3e5;
+  box-shadow: 10px 10px 10px lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Acme', sans-serif;
+}
 
