@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
   def create
     @atv = Atv.find(params[:atv_id])
     @booking = Booking.new(booking_params)
+    @booking.confirmed = false
     @booking.atv = @atv
     @booking.user = current_user
     if @booking.save
@@ -26,7 +27,9 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
+
+    @booking.confirmed = true
+    @booking.save
     redirect_to bookings_path
   end
 
