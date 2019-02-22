@@ -18,15 +18,15 @@
 }
 .atv-specs-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 20px;
 }
 /* Hide the images by default */
 .mySlides {
   display: none;
-  height: 400px;
-  width: 950px;
+  height: 600px;
+  width: 1170px;
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 10px lightgray;
