@@ -10,17 +10,16 @@
 .title {
   text-align: center;
   font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Acme', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .spec-container {
-  background: url(dirt.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 400px;
   opacity: 0.8;
   border: 1px solid black;
+  background: rgba(40,40,40,0.1)
 
 }
 
@@ -28,12 +27,11 @@
   color: #fcfdff;
   text-align: center;
   padding-top: 15px;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Acme', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .atv-img{
-   border: 1px solid black;
+   // border: 1px solid black;
 }
 
 .btm-banner {
@@ -41,7 +39,11 @@
   box-shadow: 10px 10px 10px lightgray;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Acme', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
+
+.index-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  }
 
