@@ -19,31 +19,34 @@
   height: 400px;
   opacity: 0.8;
   border: 1px solid black;
-  background: rgba(40,40,40,0.1)
+  background: rgba(40,40,40,0.1);
+  background-color: #dee3e5;
 
 }
 
 .spec-container h2 {
-  color: #fcfdff;
+  color: #387EA5;
   text-align: center;
   padding-top: 15px;
   font-family: 'Montserrat', sans-serif;
 }
 
 .atv-img{
-   // border: 1px solid black;
+   border: 1px solid black;
 }
 
 .btm-banner {
   background-color: #dee3e5;
   box-shadow: 10px 10px 10px lightgray;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 50px;
   font-family: 'Montserrat', sans-serif;
+  border: 1px solid black;
 }
 
 .index-title {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   }
-
+.atv-description h4 {
+  color: #387EA5;
+}
