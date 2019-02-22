@@ -31,7 +31,7 @@ User.all.each do |user|
       user: user,
       city: Faker::Nation.capital_city,
       remote_photo_url: url,
-      description: ".................."
+      description: "Dolore deserunt consequat quis nulla aute duis ex esse dolore nisi exercitation exercitation mollit anim velit consequat ut eu."
     )
   end
 

@@ -4,10 +4,10 @@
     <%= image_tag "ATV-Logo.png"%>
   </a>
   <div class="search-box">
-    <form id="search-city" class="form-inline">
-      <input type="text" class="form-control" placeholder="Enter City Name">
-      <!-- <input type="submit" class="btn btn-primary" value="Search"> -->
-      <%= link_to "Search", atvs_path, class: "btn btn-primary" %>
+    <form id="search-city" class="form-inline" action="/atvs">
+      <input name="city" type="text" class="form-control" placeholder="Enter City Name">
+      <input type="submit" class="btn btn-primary" value="Search">
+      <%# link_to "Search", atvs_path, class: "btn btn-primary" %>
     </form>
   </div>
   <!-- Right Navigation -->
@@ -15,10 +15,14 @@
 
       <%= link_to "Rent Your ATV", new_atv_path %>
 
+      <%= link_to "Booking Logs", bookings_path %>
+
       <% if !user_signed_in? %>
         <%= link_to "Sign Up", new_user_registration_path %>
 
         <%= link_to "Login", new_user_session_path %>
+
+
       <% end %>
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
