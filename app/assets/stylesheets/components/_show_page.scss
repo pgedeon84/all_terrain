@@ -12,6 +12,12 @@
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
 }
+
+#logo {
+  width: 100px;
+  margin-right: 0 auto;
+  display: block;
+}
 .spec-container {
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,6 +40,7 @@
 .atv-img{
    border: 1px solid black;
    height: 400px;
+   background-size: cover;
 }
 
 .atv-container-show {
