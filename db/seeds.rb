@@ -10,7 +10,7 @@ bob_fly = User.create!(
   )
 
 john_glover = User.create!(
-    email: "email2@email.com",
+    email: "grannycho@email.com",
     password: "123456",
     remote_photo_url: "https://static1.squarespace.com/static/5a9831013917eee07f1fbcc9/5ab2c1be70a6adbbeb0535c8/5ba991adec212d2c72852036/1537839547293/john-glover-photography-headshots-11.jpg?format=500w"
   )
