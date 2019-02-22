@@ -11,17 +11,32 @@
 
         <div class="top-banner">
 
-          <div class="spec-container" style="background-image:
-        url('<%= image_path "dirt.jpeg" %>')">
-            <h2> <strong>Make:</strong> <%= @atv.make %><h2>
-            <h2><strong>Model:</strong> <%= @atv.model %><h2>
-            <h2><strong>Year:</strong> <%=@atv.year%><h2>
+          <div class="atv-container-show">
+            <div class="atv-img">
+              <%= cl_image_tag @atv.photo,height: 400, width: 600, crop: :fill %>
+            </div>
+
+            <div class="spec-container">
+              <h2> <strong>Make:</strong> <%= @atv.make %><h2>
+              <h2><strong>Model:</strong> <%= @atv.model %><h2>
+              <h2><strong>Year:</strong> <%=@atv.year%><h2>
+            </div>
           </div>
 
+          <div
+            id="map"
+            style="width: 50%;
+            height: 800px;"
+            data-marker="<%= @marker.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
+                
           <div class="atv-img">
             <%= cl_image_tag @atv.photo,height: 400, width: 500, crop: :thumb %>
           </div>
+                
         </div>
+
 
 
       <h2 class="title">About My ATV</h2>
