@@ -8,8 +8,7 @@
     color: lightgray;
     flex: 0 1 calc(25% - 20px);
     margin: 10px;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Acme', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
 }
@@ -17,14 +16,13 @@
 .atv-card {
   display: flex;
   height: 250px;
+  width: 380px;
   background-size: cover;
   align-items: center;
   justify-content: center;
   border: 1px solid lightgray;
-  box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Acme', sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-family: 'Montserrat', sans-serif;
 }
 
 
