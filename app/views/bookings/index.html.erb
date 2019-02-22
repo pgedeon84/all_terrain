@@ -1,3 +1,4 @@
+<div class="bck">
 <h1 class="middle-middle">Booking Logs</h1> <p><%= link_to "Back to Atvs", atvs_path %>
 
 <div class="flex-container">
@@ -5,22 +6,23 @@
   <div >
     <h2 class="middle-middle">My Sent Requests</h2>
 
-    <ul class="test-border middle-middle grayy">
+    <ul class="test-border middle-middle grayy   ">
       <% current_user.bookings.each do |book|  %>
-
-        <li>   <%=  cl_image_tag book.atv.user.photo, height: 50, width: 50, crop: :thumb, class: "img-circle"%> <%= book.atv.user.email %>'s  <strong> <%= book.atv.year %> <%= book.atv.make %> <%= book.atv.make %></strong> </li>
+      <div class="nohat grayy">
+        <li>   <%=  cl_image_tag book.atv.user.photo, height: 50, width: 50, crop: :thumb, class: "img-circle"%> <%= book.atv.user.email %>'s   <strong> <%= book.atv.year %> <%= book.atv.make %> <%= book.atv.make %><strong> </li>
         <br>
-        <li>  <%= book.from %>--- <%= book.to %></li>
+        <li>  <%= book.from %>     <i class="fas fa-arrow-right"></i>     <%= book.to %></li>
         <li>Price: <%= ((book.to - book.from)* book.atv.price).to_i%>$</li>
         <% if book.confirmed == true %>
         <span class="label label-success">Accepted</span>
         <% else %>
         <span class="label label-default">Pending</span>
         <% end %>
+        </div>
+        <br>
 
 
 
-        <p>------------------------------------------------</p>
       <% end %>
     </ul>
   </div>
@@ -28,15 +30,18 @@
   <div >
    <h2 class="middle-middle">Requestors </h2>
 
-    <ul class="middle-middle grayy">
+    <ul class="middle-middle ">
       <% current_user.atvs.each do |atv| %>
          <% unless atv.bookings.count == 0   %>
-          <p> <strong> <%= atv.year %> <%= atv.make %> <%= atv.model %></strong> </p>
-          <ul class="test-border">
+
+          <ul class="test-border grayy">
+
+            <p > <strong> For : <%= atv.year %> <%= atv.make %> <%= atv.model %></strong> </p>
             <%  atv.bookings.each do |book| %>
+            <div class="nohat">
               <li> <%= cl_image_tag book.user.photo,height: 50, width: 50, crop: :thumb, class: "img-circle" %>  <%= book.user.email %> is requesting your atv </li>
               <br>
-              <li> From: <%= book.from %> ---> To: <%= book.to %> </li>
+              <li> From: <%= book.from %> <i class="fas fa-arrow-right"></i> To: <%= book.to %> </li>
               <li> Price: <%= (book.atv.price * (book.to - book.from)).to_i %>$ </li>
                 <% if book.confirmed == false %>
                   <%= link_to "Accept", booking_path(book), method: :patch, class: "btn btn-success " %>
@@ -44,23 +49,33 @@
                   <span class="label label-primary">Accepted</span>
 
                 <% end %>
-              <p>-----------------------------------------------------------</p>
+
+
+            </div>
+            <br>
             <% end %>
           </ul>
+          <br>
+          <br>
         <% end %>
       <% end %>
     </ul>
   </div>
 
+
 </div>
 
-<span class="badge badge-pill badge-secondary">Pending</span>
+
+<i class="fas fa-arrow-alt-right"></i>
+<i class="fas fa-arrow-alt-right"></i>
+<i class="fas fa-arrow-alt-right"></i>
+
+<div><i class="fas fa-arrow-alt-right"></i></div>
 
 
 
-
-
-
+<!-- beforei had the name before the ul
+ -->
 
 
 

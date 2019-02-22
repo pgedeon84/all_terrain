@@ -19,7 +19,7 @@
           </div>
 
           <div class="atv-img">
-            <%= cl_image_tag @atv.photo,height: 400, width: 500, crop: :fill %>
+            <%= cl_image_tag @atv.photo,height: 400, width: 500, crop: :thumb %>
           </div>
         </div>
 
@@ -32,7 +32,7 @@
           </div>
 
           <div class="img-avatar">
-            <%= cl_image_tag @atv.user.photo,
+            <%= cl_image_tag @atv.user.photo,height: 150, width: 150, crop: :thumb,
              class: "img-circle" %>
              <h6><strong><%= @atv.user.email %></strong></h6>
             <h6>$ <%= @atv.price %></h6>
