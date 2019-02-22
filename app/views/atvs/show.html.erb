@@ -12,8 +12,7 @@
         <div class="top-banner">
 
           <div class="atv-container-show">
-            <div class="atv-img">
-              <%= cl_image_tag @atv.photo,height: 400, width: 600, crop: :fill %>
+            <div class="atv-img" style="background-image: url('<%= cl_image_path @atv.photo,height: 400, width: 600, crop: :fill %>')">
             </div>
 
             <div class="spec-container">
@@ -30,14 +29,8 @@
             data-marker="<%= @marker.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
           ></div>
-                
-          <div class="atv-img">
-            <%= cl_image_tag @atv.photo,height: 400, width: 500, crop: :thumb %>
-          </div>
-                
+
         </div>
-
-
 
       <h2 class="title">About My ATV</h2>
         <div class="btm-banner">
