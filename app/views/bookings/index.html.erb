@@ -9,14 +9,22 @@
     <ul class="test-border middle-middle grayy   ">
       <% current_user.bookings.each do |book|  %>
       <div class="nohat grayy">
-        <li>   <%=  cl_image_tag book.atv.user.photo, height: 50, width: 50, crop: :thumb, class: "img-circle"%> <%= book.atv.user.email %>'s   <strong> <%= book.atv.year %> <%= book.atv.make %> <%= book.atv.make %><strong> </li>
+        <li>   <%=  cl_image_tag book.atv.user.photo, height: 50, width: 50, crop: :thumb, class: "img-circle"%> <%= book.atv.user.email %>'s   <strong> <%= book.atv.year %> <%= book.atv.make %> <%= book.atv.model %><strong> </li>
         <br>
         <li>  <%= book.from %>     <i class="fas fa-arrow-right"></i>     <%= book.to %></li>
         <li>Price: <%= ((book.to - book.from)* book.atv.price).to_i%>$</li>
         <% if book.confirmed == true %>
         <span class="label label-success">Accepted</span>
+        <p>  </p>
+        <span class="label label-danger">Cancel</span>
+        <span class="label label-primary">Update</span>
+
         <% else %>
         <span class="label label-default">Pending</span>
+        <p>  </p>
+        <span class="label label-danger">Cancel</span>
+
+        <span class="label label-primary">Update</span>
         <% end %>
         </div>
         <br>
@@ -43,6 +51,8 @@
               <li> Price: <%= (book.atv.price * (book.to - book.from)).to_i %>$ </li>
                 <% if book.confirmed == false %>
                   <%= link_to "Accept", booking_path(book), method: :patch, class: "btn btn-success " %>
+                  <%= link_to "Decline", booking_path(book), method: :patch, class: "btn btn-danger " %>
+
                 <% else %>
                   <span class="label label-primary">Accepted</span>
 
