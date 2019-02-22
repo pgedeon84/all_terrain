@@ -19,9 +19,10 @@
   position: absolute;
   top: 40px;
   left: 45px;
-  height: 270px;
+  // height: 270px;
   width: 550px;
   background-color: rgba(40,40,40,0.3);
+
 }
 #home-txt {
   color: rgb(245, 245, 245);
@@ -29,7 +30,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 60px;
   font-weight: bold;
-  padding: 20px 50px;
+  // padding: 20px 50px;
 }
 
 #home-txt2 {
@@ -37,7 +38,8 @@
   font-weight: lighter;
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
-  padding: 0 50px;
+  // padding: 0 50px;
+  margin-bottom: 40px;
 }
 
 #txt-footer {
@@ -87,4 +89,7 @@
   h4 ,h6 {
   font-family: 'Montserrat', sans-serif;
   }
+}
+.atv {
+  background-size: cover;
 }
