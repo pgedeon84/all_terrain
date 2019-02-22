@@ -1,6 +1,7 @@
 class AtvsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
+
     if params[:city].blank?
       @atvs = Atv.all
     else
@@ -13,6 +14,11 @@ class AtvsController < ApplicationController
 
     @booking = Booking.new
     @booking.atv_id = @atv.id
+
+    @marker = {
+      lng: @atv.longitude,
+      lat: @atv.latitude
+    }
   end
 
   def new
